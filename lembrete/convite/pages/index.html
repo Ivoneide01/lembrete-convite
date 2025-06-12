@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convite - 1º Aniversário da Lara 🎉</title>
+    <meta name="description" content="Convite para o primeiro aniversário da Lara - Tema Magali">
+    <link rel="stylesheet" href="/convite/styles/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One:wght@400&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <audio id="meuAudio" autoplay muted>
+  <source src="/convite/public/audio-magali.mp3" type="audio/mpeg">
+  Seu navegador não suporta áudio.
+</audio>
+    <div class="container">
+        <!-- Header com tema da Magali -->
+        <header class="header">
+            <div class="magali-decoration">
+                <div class="magali-hair"></div>
+                <div class="magali-bow"></div>
+            </div>
+            <h1 class="main-title">🎂 Convite Especial 🎂</h1>
+            <div class="subtitle">1º Aniversário da Lara</div>
+        </header>
+
+        <!-- Seção principal do convite -->
+        <main class="invitation-content">
+            <!-- Seção da aniversariante -->
+            <div class="birthday-girl">
+                <div class="photo-container">
+                    <img src="/convite/public/larakim.jpg" alt="Lara" class="birthday-photo">
+                    <div class="photo-frame"></div>
+                </div>
+                <div class="age-badge">1 ANO</div>
+                <h2 class="name">LARA</h2>
+                <p class="theme">Tema: Magali 🍉</p>
+            </div>
+
+            <!-- Informações do evento -->
+            <div class="event-details">
+                <div class="detail-card">
+                    <div class="icon">📅</div>
+                    <div class="info">
+                        <h3>Data</h3>
+                        <p>28 de Junho</p>
+                    </div>
+                </div>
+
+                <div class="detail-card">
+                    <div class="icon">🕐</div>
+                    <div class="info">
+                        <h3>Horário</h3>
+                        <p>13:00 horas</p>
+                    </div>
+                </div>
+
+                <div class="detail-card pool-reminder">
+                    <div class="icon">🏊‍♀️</div>
+                    <div class="info">
+                        <h3>Importante!</h3>
+                        <p>Traga roupas de banho<br>Teremos piscina! 🏊‍♂️</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Celebração dupla -->
+            <div class="double-celebration">
+                <div class="celebration-banner">
+                    <h3>🎉 Celebração Dupla! 🎉</h3>
+                    <p>Também comemoramos o aniversário do</p>
+                    <strong>Christian Lira</strong>
+                    <p class="dad-note">(Papai da Lara)</p>
+                </div>
+            </div>
+
+            <!-- Pedido de bebidas -->
+            <div class="drinks-request">
+                <div class="drinks-icon">🥤</div>
+                <h3>Colaboração</h3>
+                <p>Seria muito legal se você pudesse trazer uma bebida para compartilharmos!</p>
+                <div class="drinks-emoji">🧃🥤🍹🧊</div>
+            </div>
+
+            <!-- Contador regressivo -->
+            <div class="countdown-section">
+                <h3>Faltam apenas:</h3>
+                <div id="countdown" class="countdown">
+                    <div class="time-unit">
+                        <span id="days">00</span>
+                        <label>Dias</label>
+                    </div>
+                    <div class="time-unit">
+                        <span id="hours">00</span>
+                        <label>Horas</label>
+                    </div>
+                    <div class="time-unit">
+                        <span id="minutes">00</span>
+                        <label>Minutos</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Seção de confirmação -->
+            <div class="confirmation">
+                <h2>Confirme sua Presença!</h2>
+                <p>Insira seu nome abaixo para confirmar presença no aniversário:</p>
+                <input type="text" id="nome" placeholder="Digite seu nome" style="padding: 10px; border-radius: 8px; border: 2px solid #ff0000; margin: 10px; width: 250px; font-size: 1em;">
+                <button onclick="confirmarPresenca()" class="confirm-btn">
+                    ✨ Confirmar Presença ✨
+                </button>
+                <p class="rsvp-note">
+                    <a href="/convite/pages/lista.html" style="color: #ff0000; text-decoration: none; font-weight: bold; font-size: 0.9em;">Ver lista de confirmados</a>
+                </p>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="magali-elements">
+                <span class="watermelon">🍉</span>
+                <span class="watermelon">🍉</span>
+                <span class="watermelon">🍉</span>
+            </div>
+            <p>Com muito carinho, família da Lara 💕</p>
+        </footer>
+    </div>
+
+    <!-- Elementos decorativos flutuantes -->
+    <div class="floating-elements">
+        <div class="balloon balloon-1">🎈</div>
+        <div class="balloon balloon-2">🎈</div>
+        <div class="balloon balloon-3">🎈</div>
+        <div class="confetti confetti-1">🎊</div>
+        <div class="confetti confetti-2">🎊</div>
+    </div>
+<script>
+  const audio = document.getElementById('meuAudio');
+
+  // Quando o usuário mover o mouse pela primeira vez, destrava o áudio
+  function tocarAudio() {
+    audio.muted = false;
+    audio.play().catch(e => console.log("Falha ao tocar áudio:", e));
+    document.removeEventListener('mousemove', tocarAudio); // só uma vez
+  }
+
+  document.addEventListener('mousemove', tocarAudio);
+</script>
+    <script src="/convite/pages/script.js"></script>
+</body>
+</html>
+
